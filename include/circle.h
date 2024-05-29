@@ -5,12 +5,12 @@
 #include <cstdint>
 
 class Circle {
-private:
+ private:
     double radius;
     double area;
     double ference;
 
-public:
+ public:
     explicit Circle(double radius);
 
     double getRadius() const;
