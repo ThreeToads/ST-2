@@ -47,27 +47,27 @@ TEST(Circle, getCorrectArea) {
     EXPECT_NEAR(circle.getArea(), 12.12 , ULC);
 }
 
-TEST(CIRCLE_CLASS, getAreaRadius) {
+TEST(Circle, getAreaRadius) {
     Circle circle(1.0);
     circle.setArea(4 * M_PI);
     EXPECT_NEAR(circle.getRadius(), 2.0, ULC);
 }
-TEST(CIRCLE_CLASS, getAreaFerence) {
+TEST(Circle, getAreaFerence) {
     Circle circle(1.0);
     circle.setArea(4 * M_PI);
     EXPECT_NEAR(circle.getFerence(), 4 * M_PI, ULC);
 }
-TEST(CIRCLE_CLASS, getFerenceFerence) {
+TEST(Circle, getFerenceFerence) {
     Circle circle(1.0);
     circle.setFerence(4 * M_PI);
     EXPECT_NEAR(circle.getFerence(), 4 * M_PI, ULC);
 }
-TEST(CIRCLE_CLASS, setFerenceRadius) {
+TEST(Circle, setFerenceRadius) {
     Circle circle(1.0);
     circle.setFerence(4 * M_PI);
     EXPECT_NEAR(circle.getRadius(), 2.0, ULC);
 }
-TEST(CIRCLE_CLASS, setFerenceArea) {
+TEST(Circle, setFerenceArea) {
     Circle circle(1.0);
     circle.setFerence(4 * M_PI);
     EXPECT_NEAR(circle.getArea(), 4 * M_PI, ULC);
