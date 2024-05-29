@@ -30,7 +30,7 @@ void Circle::setRadius(double radius) {
     area = Circle::radius * M_PI * Circle::radius;
 }
 
-double Circle::getFerence() const{
+double Circle::getFerence() const {
     return ference;
 }
 
