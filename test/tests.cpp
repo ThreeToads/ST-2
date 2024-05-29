@@ -29,13 +29,30 @@ TEST(Circle, getCorrectRadius) {
     EXPECT_NEAR(circle.getRadius(), 1, ULC);
 }
 
+TEST(Circle, SetZeroRadius) {
+    Circle circle(1);
+    EXPECT_THROW(circle.setRadius(0), std::invalid_argument);
+}
+
+TEST(Circle, SetZeroArea) {
+    Circle circle(1);
+    EXPECT_THROW(circle.setArea(0), std::invalid_argument);
+}
+
+TEST(Circle, SetZeroFerence) {
+    Circle circle(1);
+    EXPECT_THROW(circle.setFerence(0), std::invalid_argument);
+}
+
+TEST(Circle, SetNegativeRadius) {
+    Circle circle(1);
+    EXPECT_ANY_THROW(circle.setRadius(-10));
+}
+
 TEST(Tasks, RopeAroundPlanet) {
     EXPECT_NEAR(TaskForPlanet(6371000.0, 1.0), M_1_PI * 0.5, ULC);
 }
 
 TEST(Tasks, PathAroundPoolTask) {
-    EXPECT_NEAR(
-            TaskForPoolPath(3.0, 1.0, 1000.0, 2000.0),
-            23000.0 * M_PI,
-            ULC);
+    EXPECT_NEAR(TaskForPoolPath(3.0, 1.0, 1000.0, 2000.0),23000.0 * M_PI, ULC);
 }
