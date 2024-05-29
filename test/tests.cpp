@@ -19,7 +19,7 @@ TEST(Circle, CircleWithNormDouble) {
 }
 
 TEST(Circle, CircleWithNegativeInt) {
-    EXPECT_ANY_THROW(Circle(-122));
+    EXPECT_ANY_THROW(Circle(-123));
 }
 
 TEST(Circle, getCorrectRadius) {
