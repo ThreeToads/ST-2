@@ -8,6 +8,8 @@
 
 const double ULC = 1.0e-9;
 
+
+
 TEST(Circle, CircleWithRadiusZero) {
     EXPECT_ANY_THROW(Circle(0));
 }
@@ -24,12 +26,62 @@ TEST(Circle, CircleWithNegativeInt) {
     EXPECT_ANY_THROW(Circle(-123));
 }
 
-TEST(Circle, getCorrectRadius) {
+TEST(Circle, CircleWithBigInt) {
+    EXPECT_NO_THROW(Circle(1232342));
+}
+
+TEST(Circle, getCorrectRadiuss) {
     Circle circle(1);
     EXPECT_NEAR(circle.getRadius(), 1, ULC);
 }
 
-TEST(Circle, SetZeroRadius) {
+TEST(Circle, getCorrectFerence) {
+    Circle circle(1);
+    circle.setFerence(12);
+    EXPECT_NEAR(circle.getFerence(), 12, ULC);
+}
+
+TEST(Circle, getCorrectArea) {
+    Circle circle(1);
+    circle.setArea(12.12);
+    EXPECT_NEAR(circle.getArea(), 12.12 , ULC);
+}
+
+TEST(CIRCLE_CLASS, getAreaRadius) {
+    Circle circle(1.0);
+    circle.setArea(4 * M_PI);
+    EXPECT_NEAR(circle.getRadius(), 2.0, ULC);
+}
+TEST(CIRCLE_CLASS, getAreaFerence) {
+    Circle circle(1.0);
+    circle.setArea(4 * M_PI);
+    EXPECT_NEAR(circle.getFerence(), 4 * M_PI, ULC);
+}
+TEST(CIRCLE_CLASS, getFerenceFerence) {
+    Circle circle(1.0);
+    circle.setFerence(4 * M_PI);
+    EXPECT_NEAR(circle.getFerence(), 4 * M_PI, ULC);
+}
+TEST(CIRCLE_CLASS, setFerenceRadius) {
+    Circle circle(1.0);
+    circle.setFerence(4 * M_PI);
+    EXPECT_NEAR(circle.getRadius(), 2.0, ULC);
+}
+TEST(CIRCLE_CLASS, setFerenceArea) {
+    Circle circle(1.0);
+    circle.setFerence(4 * M_PI);
+    EXPECT_NEAR(circle.getArea(), 4 * M_PI, ULC);
+}
+
+TEST(Circle, SetCorrectArea) {
+    Circle circle(1);
+    circle.setArea(4 * M_PI);
+    EXPECT_NEAR(circle.getRadius(), 2, ULC);
+    EXPECT_NEAR(circle.getArea(), 4 * M_PI, ULC);
+    EXPECT_NEAR(circle.getFerence(), 4 * M_PI, ULC);
+}
+
+TEST(Circle, SetZeroRadiuss) {
     Circle circle(1);
     EXPECT_THROW(circle.setRadius(0), std::invalid_argument);
 }
@@ -46,7 +98,17 @@ TEST(Circle, SetZeroFerence) {
 
 TEST(Circle, SetNegativeRadius) {
     Circle circle(1);
-    EXPECT_ANY_THROW(circle.setRadius(-10));
+    EXPECT_ANY_THROW(circle.setRadius(-1760));
+}
+
+TEST(Circle, SetNegativeArea) {
+    Circle circle(1);
+    EXPECT_ANY_THROW(circle.setArea(-1432));
+}
+
+TEST(Circle, SetNegativeFerence) {
+    Circle circle(1);
+    EXPECT_ANY_THROW(circle.setFerence(-120));
 }
 
 TEST(Tasks, RopeAroundPlanet) {
