@@ -54,5 +54,5 @@ TEST(Tasks, RopeAroundPlanet) {
 }
 
 TEST(Tasks, PathAroundPoolTask) {
-    EXPECT_NEAR(TaskForPoolPath(3.0, 1.0, 1000.0, 2000.0),23000.0 * M_PI, ULC);
+    EXPECT_NEAR(TaskForPoolPath(3.0, 1.0, 1000.0, 2000.0), 23000.0 * M_PI, ULC);
 }
